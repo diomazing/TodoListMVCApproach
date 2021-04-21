@@ -1,6 +1,7 @@
 <%- include('./partials/head.ejs') %>
 
 <body>
+  <a href="/logout" style="float:left; text-decoration: none; padding:15px; color:white; font-size: 24px;">Logout</a>
 <section id="services" class="services section-bg">
     <div class="container">
       <div class="section-title">
@@ -8,7 +9,7 @@
         <hr>
         <% var count = 0 %>
         <% for(i=0;i < tasks.length ; i++) { %>
-            <% if(tasks[i].status == 'ongoing'){%>
+            <% if(tasks[i].status == 'pending'){%>
                 <% ++count %>
             <% } %>    
         <% } %>
@@ -23,6 +24,7 @@
                         <div class="icon">  <i class="bx bx-plus"></i></div>
                         <h4> Add new task</h4>
                         <p>A new task appears on the <br> right side of this box</p>
+                       
                   </div></a>
                 </div>
               </div>
@@ -42,10 +44,10 @@
                           <div class="info">
                             <p><%= tasks[i].description %></p>
                             <p> Status:&nbsp;<em> <%= tasks[i].status %></em> </p> <hr>
-                            <%if(tasks[i].status == 'ongoing'){%>
-                                <a href="/updateTask?id=<%= todo[i].id %>" style="color: rgba(19, 117, 30, 0.687);"><i class="bx bx-check"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                            <%if(tasks[i].status == 'pending'){%>
+                                <a href="/task/edit?id=<%= tasks[i].username %>" style="color: rgba(19, 117, 30, 0.687);"><i class="bx bx-check"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
                                 <% } %>
-                                <a href="/deleteTask?id=<%= todo[i].id %>" style="color: red;"><i class="bx bx-trash"></i></a>
+                                <a href="/task/delete?id=<%= tasks[i].username %>" style="color: red;"><i class="bx bx-trash"></i></a>
                           </div>
                         </div>
                       </div>

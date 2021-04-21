@@ -6,9 +6,7 @@ router.post("/new", (req, res) => {
     db.User.create({
         username: req.body.username, 
         password: req.body.password,
-    }).then((newUser) => res.send(newUser));
-
-    res.render("")
+    }).then((newUser) => res.redirect('/'));
 });
 
 router.post("/all", (req, res) => {
@@ -19,15 +17,25 @@ router.post("/all", (req, res) => {
     } catch (error) {
         console.log(error);
     }
-})
-// router.post('/find/:username', (req, res) => {
-//     db.User.findAll({
-//         where: {
-//             username: req.params.username
-//         },
-//         include: [db.User]
-//     }).then(allUsers => res.send(allUsers));
-// })
+});
+router.post('/find', (req, res) => {
+    db.User.findOne({
+        where: {
+            username: req.body.username
+        },
+    }).then(allUsers => {
+        console.log(req.body.username);
+        if(allUsers){
+            console.log(allUsers.id);
+            req.session.id = allUsers.id;
+            req.session.username = allUsers.username;
+            res.redirect('/task/find')
+        }else{
+            console.log("User not found");
+        }
+    });
+});
+
 
 module.exports = router;
 

@@ -6,6 +6,10 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
             allowNull: false
         },
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         title: {
             type: DataTypes.STRING,
             allowNull: false
@@ -15,17 +19,9 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         status: {
-            type: DataTypes.STRING,
+            type: DataTypes.ENUM('pending', 'completed'),
             allowNull: false
-        }
+        },
     });
-
-    Task.associate = models => {
-        Task.belongsTo(models.User, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
-    }
     return Task;
 };

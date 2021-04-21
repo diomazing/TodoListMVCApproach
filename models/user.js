@@ -15,14 +15,6 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         }
     });
-    User.associate = models => {
-        User.hasMany(models.Task, {
-            onDelete: "cascade"
-        });
-
-        User.hasOne(models.Profile, {
-            onDelete: "cascade"
-        });
-    };
+    
     return User;
 };
