@@ -1,0 +1,16 @@
+<html>
+    <%- include ('./partials/head.ejs') %>
+    <body>
+        <div class="login-page">
+            <div class="form">
+              <form class="login-form" method="post" action="/api/users/new">
+                <input name="username" type="text" placeholder="username"/>
+                <input name="password" type="password" placeholder="password"/>
+                <input name="password2" placeholder = "confirm password" type="password"></input>
+                <button>Register</button>
+                <p class="message">Already have an account? <a href="/">Click here!</a></p>
+              </form>
+            </div>
+          </div>
+    </body>
+</html>

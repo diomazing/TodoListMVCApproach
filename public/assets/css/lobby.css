@@ -1,0 +1,103 @@
+.title{
+    text-align: center;
+    color: #2c3e50;
+  }
+
+.taskscardContainer {max-width: 940px; width: 100%; margin: 0 auto; align-items: center; justify-content: center; text-overflow: clip; } 
+.twelve { width: 100%; } 
+.eleven { width: 91.53%; } 
+.ten { width: 83.06%; } 
+.nine { width: 74.6%; } 
+.eight { width: 66.13%; } 
+.seven { width: 57.66%; } 
+.six { width: 49.2%; } 
+.five { width: 40.73%; } 
+.four { width: 32.26%;} 
+.three { width: 23.8%; } 
+.two { width: 15.33%; } 
+.one{ width: 6.866%;}
+
+ /* COLUMNS */ 
+
+.col { 
+	display: block; 
+	float:left;
+	margin: 1% 0 1% 1.6%; 
+} 
+
+.card{
+	max-width: 80%;
+	height: 400px;
+	background-color: #fff;
+	font-family: 'Arimo', sans-serif;
+	font-size: 14px;
+}
+
+#card2{
+	overflow: hidden;
+	color: #2c3e50;
+}
+
+#card2 a{
+	color: #2c3e50;
+}
+
+#card2 .wrapper{
+	padding: 10px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#card2 .header{
+	width: 100%;
+	height: 100px;
+	position: relative;
+	background-color: #3498db;
+}
+
+#card2 .header:after{
+	content: '';
+    background: inherit;
+    bottom: 0;
+    display: block;
+    height: inherit;
+    position: absolute;
+    left: 0;
+    right: 0;
+    transform: skewY(-8deg);
+    -webkit-transform: skewY(-8deg);
+    transform-origin: 100%;
+}
+
+
+#card2 .name{
+	margin-top: 70px;
+	text-align: center;
+}
+
+#card2 .social .four{
+	text-align: center;
+}
+
+#card2 .info{
+	margin: 30px 0;
+	text-align: center;
+}
+.featured-services .icon-box {
+    padding: 20px;
+    color: #5f687b;
+    background: #f9f9fa;
+    border-radius: 4px;
+    border: 1px solid #f9f9fa;
+    transition: 0.3s;
+  }
+  
+  .featured-services .icon {
+    margin: 0 0 15px 0;
+  }
+  
+  .featured-services .icon i {
+    color: #16df7e;
+    font-size: 36;
+  }
